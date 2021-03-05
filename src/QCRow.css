@@ -1,0 +1,16 @@
+.qc-row {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.qc-input {
+  border: 1px solid #333;
+  border-radius: .3em;
+  padding: .25rem;
+  width: 7em;
+}
+
+.qc-select {
+  margin-left: .5rem;
+}

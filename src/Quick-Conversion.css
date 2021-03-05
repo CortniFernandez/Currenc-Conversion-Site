@@ -2,3 +2,19 @@
   text-align: left;
   padding-left: 20vw;
 }
+
+.qc-middle-box {
+  display: flex;
+  justify-content: center;
+}
+.equals {
+  font-weight: bold;
+  font-size: 20pt;
+  display: inline-block;
+}
+
+.swap-button {
+  display: inline-block;
+  font-size: 12pt;
+  padding: 7px;
+}
