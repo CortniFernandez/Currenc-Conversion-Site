@@ -10,10 +10,10 @@
 .mid-box {
   display: flex;
   justify-content: space-between;
+  padding: 5px 0;
 }
 
 .equals {
-  font-weight: bold;
   font-size: 20pt;
   padding: 5px 15px;
   display: inline-block;
@@ -23,6 +23,10 @@
   display: inline-block;
   font-size: 20pt;
   padding: 5px 30px;
+}
+
+.swap-button:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {

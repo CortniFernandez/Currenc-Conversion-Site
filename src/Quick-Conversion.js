@@ -60,7 +60,7 @@ function QCApp() {
   return (
     <div className="App">
       <h1 className="title">Quick Conversion</h1>
-      <div className="qc-container">
+      <div className="container">
         <div className="row">
           <div className="col-lg-4 offset-lg-4 col-md-8 offset-md-2">
             <QCRow 

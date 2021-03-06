@@ -3,9 +3,12 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <div>
-      <h6 className="footer">Made by Cortni</h6>
-    </div>
+
+        <div className="footer">
+          <h6>Made by Cortni</h6>
+          <h6><a className="footer-link" href="https://github.com/CortniFernandez/Currency-Conversion-Site">Github</a></h6>
+        </div>
+
   );
 }
 

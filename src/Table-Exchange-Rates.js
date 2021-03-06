@@ -1,5 +1,5 @@
 import React from 'react';
-import './Table-Exchange.css';
+import './Table-Exchange-Rates.css';
 import currencies from './currencies';
 import CurrTable from './Currency-Table';
 
@@ -51,7 +51,7 @@ class TEApp extends React.Component {
 
     return (
       <div className="App">
-        <h1 className="title">Table Exchange</h1>
+        <h1 className="title">Table Exchange Rates</h1>
         <form className="p-3 form-inline justify-content-center">
           <h3 className="mb-2"><b className="mr-2">1</b>
           <select value={base} onChange={this.changeBase} className="form-control form-control-lg mb-2" disabled={loading}>

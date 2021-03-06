@@ -1,8 +1,9 @@
-nav {
-  text-align: right;
+.navbar-brand {
+  color: grey;
 }
-
 .nav-item {
   display: inline-block;
   margin: 20px 30px 20px 0;
+  color: grey;
+  border-bottom: 1px solid rgb(216, 216, 216);
 }
