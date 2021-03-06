@@ -60,27 +60,41 @@ function QCApp() {
   return (
     <div className="App">
       <h1 className="title">Quick Conversion</h1>
-      <QCRow 
-        currencyOptions={currencyOptions}
-        selectedCurrency={fromCurrency}
-        onChangeCurrency={e => setFromCurrency(e.target.value)}
-        onChangeAmount={handleFromAmountChange}
-        amount={fromAmount}
-      />
-      <div className="qc-middle-box">
-        <div className="equals">=</div>
-        <div className="swap-button">
-          <button onClick={handleSwap} >Swap</button>
+      <div className="qc-container">
+        <div className="row">
+          <div className="col-lg-4 offset-lg-4 col-md-8 offset-md-2">
+            <QCRow 
+              currencyOptions={currencyOptions}
+              selectedCurrency={fromCurrency}
+              onChangeCurrency={e => setFromCurrency(e.target.value)}
+              onChangeAmount={handleFromAmountChange}
+              amount={fromAmount}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-4 offset-lg-4 col-md-8 offset-md-2">
+            <div className="mid-box">
+              <div className="equals">=</div>
+              <div className="swap-button">
+                <p className="m-0" onClick={handleSwap}>&#8595;&#8593;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-4 offset-lg-4 col-md-8 offset-md-2">
+            <QCRow 
+              currencyOptions={currencyOptions}
+              selectedCurrency={toCurrency}
+              onChangeCurrency={e => setToCurrency(e.target.value)}
+              onChangeAmount={handleToAmountChange}
+              amount={toAmount}
+            />
+          </div>
         </div>
       </div>
-      <QCRow 
-        currencyOptions={currencyOptions}
-        selectedCurrency={toCurrency}
-        onChangeCurrency={e => setToCurrency(e.target.value)}
-        onChangeAmount={handleToAmountChange}
-        amount={toAmount}
-      />
-    </div>
+  </div>
   );
 }
 

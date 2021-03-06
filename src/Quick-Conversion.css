@@ -3,18 +3,30 @@
   padding-left: 20vw;
 }
 
-.qc-middle-box {
-  display: flex;
-  justify-content: center;
+.qc-container {
+  margin: 5vh 0 30vh 0;
 }
+
+.mid-box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .equals {
   font-weight: bold;
   font-size: 20pt;
+  padding: 5px 15px;
   display: inline-block;
 }
 
 .swap-button {
   display: inline-block;
-  font-size: 12pt;
-  padding: 7px;
+  font-size: 20pt;
+  padding: 5px 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .mid-box {
+    justify-content: space-around;
+  }
 }

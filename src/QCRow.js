@@ -11,13 +11,19 @@ function QCRow(props) {
     amount
   } = props
   return (
-    <div className="qc-row">
-      <input type="number" className="qc-input" value={amount} onChange={onChangeAmount}/>
-      <select className="qc-select" value={selectedCurrency} onChange={onChangeCurrency}>
-        {currencyOptions.map(option => (
-          <option key={option} value={option}>{option}</option>
-        ))}
-      </select>
+    <div className="container">
+      <div className="row">
+        <div className="col-8">
+          <input type="number" className="qc-input" value={amount} onChange={onChangeAmount}/>
+          </div>
+        <div className="col-4">
+          <select className="qc-select" value={selectedCurrency} onChange={onChangeCurrency}>
+            {currencyOptions.map(option => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </div>
+      </div>
     </div>
   );
 }
