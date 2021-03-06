@@ -51,6 +51,12 @@ function QCApp() {
     setAmountInFromCurrency(false)
   }
 
+  function handleSwap(e) {
+    e.preventDefault()
+    setFromCurrency(toCurrency)
+    setToCurrency(fromCurrency)
+  }
+
   return (
     <div className="App">
       <h1 className="title">Quick Conversion</h1>
@@ -64,7 +70,7 @@ function QCApp() {
       <div className="qc-middle-box">
         <div className="equals">=</div>
         <div className="swap-button">
-          <button>Swap</button>
+          <button onClick={handleSwap} >Swap</button>
         </div>
       </div>
       <QCRow 
