@@ -9,6 +9,7 @@ class TEApp extends React.Component {
     this.state = {
       base: 'USD',
       rates: null,
+      loading: true,
     }
   }
 
@@ -18,9 +19,11 @@ class TEApp extends React.Component {
 
   changeBase = (e) => {
     this.setState({ base: e.target.value });
+    this.getRatesData(e.target.value);
   }
   
   getRatesData = (base) => {
+    this.setState({ loading: true });
     fetch(`https://alt-exchange-rate.herokuapp.com/latest?base=${base}`)
       .then(response => response.json())
       .then(data => {
@@ -37,21 +40,21 @@ class TEApp extends React.Component {
           symbol: currencies[acronym].symbol,
         }))
 
-        this.setState({ rates });
+        this.setState({ rates, loading: false });
       })
       .catch(error => console.error(error.message));
   }
 
 
   render () {
-    const { base, rates } = this.state;
+    const { base, rates, loading } = this.state;
 
     return (
       <div className="App">
         <h1 className="title">Table Exchange</h1>
-        <form className="p-3 bg-light form-inline justify-content-center">
+        <form className="p-3 form-inline justify-content-center">
           <h3 className="mb-2"><b className="mr-2">1</b>
-          <select value={base} onChange={this.changeBase} className="form-control form-control-lg mb-2">
+          <select value={base} onChange={this.changeBase} className="form-control form-control-lg mb-2" disabled={loading}>
             {Object.keys(currencies).map(currencyAcronym => <option key={currencyAcronym} value={currencyAcronym}>{currencyAcronym}</option>)}
           </select><b className="ml-2">=</b></h3>
         </form>
