@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Chart from 'chart.js';
 import './Quick-Conversion.css';
 import QCRow from './QCRow';
 
-const LatestRates = 'https://alt-exchange-rate.herokuapp.com/latest'
+const LatestRates = 'https://api.exchangeratesapi.io/latest'
 
 function QCApp() {
   const [currencyOptions, setCurrencyOptions] = useState([])
@@ -94,6 +95,7 @@ function QCApp() {
           </div>
         </div>
       </div>
+      <canvas></canvas>
   </div>
   );
 }

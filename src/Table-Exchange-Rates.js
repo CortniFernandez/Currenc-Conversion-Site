@@ -24,7 +24,7 @@ class TEApp extends React.Component {
   
   getRatesData = (base) => {
     this.setState({ loading: true });
-    fetch(`https://alt-exchange-rate.herokuapp.com/latest?base=${base}`)
+    fetch(`https://api.exchangeratesapi.io/latest?base=${base}`)
       .then(response => response.json())
       .then(data => {
         if (data.error) {
