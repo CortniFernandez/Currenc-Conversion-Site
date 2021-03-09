@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+#chart {
+  padding: 20px;
+}
+
 @media screen and (max-width: 992px) {
   .mid-box {
     justify-content: space-around;

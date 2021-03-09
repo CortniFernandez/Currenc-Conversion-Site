@@ -39,6 +39,7 @@ function QCApp() {
       fetch(`${LatestRates}?base=${fromCurrency}&symbols=${toCurrency}`)
         .then(response => response.json())
         .then(data => setExchangeRate(data.rates[toCurrency]))
+        .then(getHistoricalRates(fromCurrency, toCurrency))
     }
   }, [fromCurrency, toCurrency])
 
@@ -56,6 +57,42 @@ function QCApp() {
     e.preventDefault()
     setFromCurrency(toCurrency)
     setToCurrency(fromCurrency)
+  }
+
+  function getHistoricalRates (base, quote) {
+    const endDate = new Date().toISOString().split('T')[0];
+    const startDate = new Date((new Date).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+
+    fetch(`https://api.exchangeratesapi.io/history?start_at=${startDate}&end_at=${endDate}&base=${base}&symbols=${quote}`)
+      .then(response => response.json())
+      .then(data => {
+        const chartLabels = Object.keys(data.rates);
+        const chartData = Object.values(data.rates).map(rate => rate[quote]);
+        const chartLabel = `${base}/${quote}`;
+        buildChart(chartLabels, chartData, chartLabel);
+      })
+      .catch(error => console.error(error.message));
+  }
+
+  function buildChart (labels, data, label) {
+    const context = document.getElementById('chart').getContext('2d');
+    const historicalChart = new Chart(context, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: label,
+            data,
+            fill: false,
+            tension: 0,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+      }
+    })
   }
 
   return (
@@ -94,8 +131,10 @@ function QCApp() {
             />
           </div>
         </div>
+        <h5 className="text-center pt-5 pb-2 border-bottom">Exchange Rate Over Time</h5>
+        <canvas id="chart" />
       </div>
-      <canvas></canvas>
+      
   </div>
   );
 }
