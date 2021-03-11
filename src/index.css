@@ -1,12 +1,14 @@
 body {
   font-family: Helvetica, sans-serif;
+  color: rgb(69,92,120);
 }
 
 .title {
   text-align: left;
   padding-bottom: 20px;
   font-family: Palatino, serif;
-  border-bottom: 1px solid rgb(216, 216, 216);
+  color: rgb(61,177,161);
+  border-bottom: 1px solid rgb(140,189,188);
 }
 
 .container {

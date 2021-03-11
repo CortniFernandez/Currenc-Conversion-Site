@@ -28,7 +28,10 @@
 .swap-button:hover {
   cursor: pointer;
 }
-
+.chart-title {
+  border-bottom: 1px solid rgb(140,189,188);
+  color: rgb(61,177,161);
+}
 #chart {
   padding: 20px;
 }

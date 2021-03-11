@@ -1,11 +1,7 @@
-.qc-input {
-  border: 1px solid #333;
+.qc-select, .qc-input {
+  border: 1px solid rgb(140,189,188);
+  color: rgb(69,92,120);
   border-radius: 3px;
-  padding: 5px;
-  width: 100%;
-}
-
-.qc-select {
   padding: 5px;
   width: 100%;
 }

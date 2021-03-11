@@ -1,9 +1,10 @@
-.navbar-brand {
-  color: grey;
-}
 .nav-item {
   display: inline-block;
   margin: 20px 30px 20px 0;
-  color: grey;
-  border-bottom: 1px solid rgb(216, 216, 216);
+  color: rgb(69,92,120);
+  border-bottom: 1px solid rgb(140,189,188);
+}
+.icon {
+  height: 70px;
+  padding-top: 5px;
 }

@@ -61,7 +61,7 @@ function QCApp() {
 
   function getHistoricalRates (base, quote) {
     const endDate = new Date().toISOString().split('T')[0];
-    const startDate = new Date((new Date).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+    const startDate = new Date((new Date()).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
 
     fetch(`https://api.exchangeratesapi.io/history?start_at=${startDate}&end_at=${endDate}&base=${base}&symbols=${quote}`)
       .then(response => response.json())
@@ -76,7 +76,7 @@ function QCApp() {
 
   function buildChart (labels, data, label) {
     const context = document.getElementById('chart').getContext('2d');
-    const historicalChart = new Chart(context, {
+    new Chart(context, {
       type: "line",
       data: {
         labels,
@@ -131,7 +131,7 @@ function QCApp() {
             />
           </div>
         </div>
-        <h5 className="text-center pt-5 pb-2 border-bottom">Exchange Rate Over Time</h5>
+        <h5 className="text-center pt-5 pb-2 chart-title">Exchange Rate Over Time</h5>
         <canvas id="chart" />
       </div>
       

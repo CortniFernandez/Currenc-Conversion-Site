@@ -52,9 +52,9 @@ class TEApp extends React.Component {
     return (
       <div className="App">
         <h1 className="title">Table Exchange Rates</h1>
-        <form className="p-3 form-inline justify-content-center">
-          <h3 className="mb-2"><b className="mr-2">1</b>
-          <select value={base} onChange={this.changeBase} className="form-control form-control-lg mb-2" disabled={loading}>
+        <form className="pt-4 form-inline justify-content-center">
+          <h3><b className="mr-2">1</b>
+          <select value={base} onChange={this.changeBase} className="form-control form-control-lg te-select" disabled={loading}>
             {Object.keys(currencies).map(currencyAcronym => <option key={currencyAcronym} value={currencyAcronym}>{currencyAcronym}</option>)}
           </select><b className="ml-2">=</b></h3>
         </form>
